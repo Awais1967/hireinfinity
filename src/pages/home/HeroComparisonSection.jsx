@@ -68,7 +68,7 @@ function ComparisonCard({ card }) {
 
   return (
     <article className={`flex min-h-[440px] flex-col rounded-2xl border p-7 shadow-sm sm:p-8 lg:p-10 ${styles.card}`}>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 mb-0">
         <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border ${styles.iconBox}`}>
           <HeaderIcon className="h-6 w-6" />
         </div>
@@ -101,7 +101,7 @@ export function HeroComparisonSection() {
     <section className="bg-[#f5f6f8]">
       <StatStrip />
 
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24 mb-0">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-mono text-[11px] font-bold uppercase tracking-[0.34em] text-[#0052FF]">HIRING REIMAGINED</p>
           <h2 className="mt-5 font-display text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">
@@ -109,7 +109,7 @@ export function HeroComparisonSection() {
           </h2>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-6xl gap-7 lg:grid-cols-2 lg:gap-8">
+        <div className="mx-auto mt-16 grid max-w-6xl gap-7 lg:grid-cols-2 lg:gap-8 mb-0">
           {comparisonCards.map((card) => (
             <ComparisonCard key={card.title} card={card} />
           ))}

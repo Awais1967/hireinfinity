@@ -197,7 +197,7 @@ export function PricingSection() {
 
   return (
     <section id="pricing" className="scroll-mt-24 bg-[#f5f6f8]">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
         <div className="mx-auto max-w-4xl text-center">
           <p className="font-mono text-[11px] font-bold uppercase tracking-[0.34em] text-[#0052FF]">Simple, All-Inclusive Plans</p>
           <h2 className="mt-5 font-display text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">
@@ -209,7 +209,7 @@ export function PricingSection() {
 
         {activeContent[activeTab]}
 
-        <div className="mx-auto mt-8 flex max-w-3xl items-start justify-center gap-3 rounded-xl border border-slate-200 bg-white/70 px-5 py-4 text-center text-sm leading-6 text-slate-700 shadow-sm sm:items-center">
+        <div className="mx-auto mt-6 flex max-w-3xl items-start justify-center gap-3 rounded-xl border border-slate-200 bg-white/70 px-5 py-4 text-center text-sm leading-6 text-slate-700 shadow-sm sm:items-center">
           <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600 sm:mt-0" />
           <p>
             <span className="font-bold text-slate-950">All plans include:</span> Professional Delivery PM oversight, full US hours match, worry-free 2-week trial at 50%, and cancel-anytime monthly rollouts.

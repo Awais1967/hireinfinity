@@ -32,7 +32,7 @@ function ValueCard({ card }) {
 export function ValueCardsSection() {
   return (
     <section className="border-b border-slate-200 bg-[#f5f6f8]">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 lg:grid-cols-3">
           {valueCards.map((card) => (
             <ValueCard key={card.title} card={card} />

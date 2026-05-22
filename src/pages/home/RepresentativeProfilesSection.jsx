@@ -40,7 +40,7 @@ function ProfileCard({ profile }) {
 export function RepresentativeProfilesSection() {
   return (
     <section className="bg-[#f5f6f8]">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="font-mono text-[11px] font-bold uppercase tracking-[0.32em] text-[#0052FF]">Available Roster Preview</p>

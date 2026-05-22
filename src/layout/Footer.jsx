@@ -19,10 +19,10 @@ export function Footer() {
               Hire senior, vetted engineers compatible with your hours in 5 days or less. Reduce development overhead with zero hiring barriers.
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="https://linkedin.com" className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-500 shadow-sm transition-colors hover:border-blue-300 hover:text-blue-600" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/infiniti-softwares/" className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-500 shadow-sm transition-colors hover:border-blue-300 hover:text-blue-600" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://instagram.com" className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-500 shadow-sm transition-colors hover:border-pink-300 hover:text-pink-600" aria-label="Instagram">
+              <a href="https://www.instagram.com/infinitysoftwarehq?igsh=MWQ2Y2xwZmZubHFzeA==" className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-500 shadow-sm transition-colors hover:border-pink-300 hover:text-pink-600" aria-label="Instagram">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
