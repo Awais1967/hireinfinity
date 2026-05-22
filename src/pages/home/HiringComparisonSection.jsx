@@ -1,6 +1,8 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { sourcingComparisonRows, successStories } from "../../constants/mockData";
+import { fadeUp, staggerContainer, cardHover } from "../../common/ui/animationVariants";
 
 const columns = [
   { key: "parameter", label: "EVALUATION PARAMETER" },
@@ -13,7 +15,7 @@ const columns = [
 
 function ComparisonTable() {
   return (
-    <div className="mx-auto mt-16 max-w-6xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05)]">
+    <motion.div variants={fadeUp} className="mx-auto mt-16 max-w-6xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05)]">
       <div className="overflow-x-auto">
         <table className="w-full min-w-[1080px] border-collapse text-left">
           <thead>
@@ -49,13 +51,18 @@ function ComparisonTable() {
           </tbody>
         </table>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 function SuccessStoryCard({ story }) {
   return (
-    <article className="relative flex min-h-[276px] flex-col rounded-xl border border-slate-200 bg-white p-8 shadow-[0_8px_24px_rgba(15,23,42,0.05)]">
+    <motion.article
+      variants={fadeUp}
+      whileHover={cardHover.whileHover}
+      transition={cardHover.transition}
+      className="relative flex min-h-[276px] flex-col rounded-xl border border-slate-200 bg-white p-8 shadow-[0_8px_24px_rgba(15,23,42,0.05)]"
+    >
       <div className="absolute -top-4 left-0 px-6 font-serif text-7xl font-black leading-none text-blue-100">“</div>
       <p className="relative z-10 mt-4 text-[15px] italic leading-7 text-slate-700">"{story.quote}"</p>
 
@@ -68,45 +75,45 @@ function SuccessStoryCard({ story }) {
           <p className="mt-1 text-xs text-slate-600">{story.role}</p>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }
 
 function SuccessStoriesSection() {
   return (
-    <section className="border-t border-slate-200 bg-[#f5f6f8]">
+    <motion.section className="border-t border-slate-200 bg-[#f5f6f8]" variants={staggerContainer} initial="hidden" animate="visible">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <div className="mx-auto max-w-3xl text-center">
+        <motion.div variants={fadeUp} className="mx-auto max-w-3xl text-center">
           <p className="font-mono text-[11px] font-bold uppercase tracking-[0.34em] text-[#0052FF]">SUCCESS STORIES</p>
           <h2 className="mt-5 font-display text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-3xl">
             Trusted by tech founders globally
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="mx-auto mt-16 grid max-w-6xl gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <motion.div variants={staggerContainer} className="mx-auto mt-16 grid max-w-6xl gap-8 md:grid-cols-2 lg:grid-cols-3">
           {successStories.map((story) => (
             <SuccessStoryCard key={story.name} story={story} />
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
 export function HiringComparisonSection() {
   return (
-    <section className="bg-[#f5f6f8]">
+    <motion.section className="bg-[#f5f6f8]" initial="hidden" animate="visible" variants={staggerContainer}>
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <div className="mx-auto max-w-4xl text-center">
+        <motion.div variants={fadeUp} className="mx-auto max-w-4xl text-center">
           <p className="font-mono text-[11px] font-bold uppercase tracking-[0.34em] text-[#0052FF]">RIGOROUS SOURCING COMPARE</p>
           <h2 className="mt-5 font-display text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-3xl">
             How we compare on cost, speed & flexibility
           </h2>
-        </div>
+        </motion.div>
 
         <ComparisonTable />
       </div>
       <SuccessStoriesSection />
-    </section>
+    </motion.section>
   );
 }

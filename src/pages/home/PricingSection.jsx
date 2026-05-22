@@ -1,7 +1,8 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { CheckCircle2, CreditCard, ShieldCheck } from "lucide-react";
 import { hourlyRateCards, pricingTableRows, teamPodCards } from "../../constants/mockData";
+import { fadeUp, staggerContainer, cardHover } from "../../common/ui/animationVariants";
 
 const tabs = [
   { id: "monthly", label: "Tab 1: Monthly Rates" },
@@ -19,7 +20,7 @@ const columns = [
 
 function ComplianceCard() {
   return (
-    <div className="mx-auto mt-9 flex max-w-4xl flex-col gap-4 rounded-xl border border-blue-100 bg-blue-50/60 p-5 text-left shadow-sm sm:flex-row sm:p-6">
+    <motion.div variants={fadeUp} className="mx-auto mt-9 flex max-w-4xl flex-col gap-4 rounded-xl border border-blue-100 bg-blue-50/60 p-5 text-left shadow-sm sm:flex-row sm:p-6">
       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-[#0052FF]">
         <CreditCard className="h-6 w-6" />
       </div>
@@ -30,7 +31,7 @@ function ComplianceCard() {
           <strong>Credit Cards</strong>, <strong>ACH Transfers</strong>, or secure bank <strong>Wire Transfers</strong> with automatic W-8/W-9 processing.
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -63,7 +64,7 @@ function PricingTabs({ activeTab, onTabChange }) {
 
 function PricingTable() {
   return (
-    <div className="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05)]">
+    <motion.div variants={fadeUp} className="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05)]">
       <div className="px-6 py-8 sm:px-8">
         <h3 className="font-display text-2xl font-bold tracking-tight text-slate-950">Staff Augmentation Monthly Flat Rates</h3>
         <p className="mt-2 font-mono text-xs font-medium text-slate-500">Full-time dedicated engineers (160h/month). Billed transparently semi-monthly.</p>
@@ -93,16 +94,19 @@ function PricingTable() {
           </tbody>
         </table>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 function HourlyRatesContent() {
   return (
-    <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+    <motion.div variants={staggerContainer} className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
       {hourlyRateCards.map((card) => (
-        <article
+        <motion.article
           key={card.role}
+          variants={fadeUp}
+          whileHover={cardHover.whileHover}
+          transition={cardHover.transition}
           className={`relative flex min-h-[324px] flex-col rounded-xl border bg-white p-7 text-center shadow-[0_8px_24px_rgba(15,23,42,0.05)] ${
             card.featured ? "border-blue-400 ring-1 ring-blue-300" : "border-slate-200"
           }`}
@@ -129,18 +133,21 @@ function HourlyRatesContent() {
           >
             {card.button}
           </button>
-        </article>
+        </motion.article>
       ))}
-    </div>
+    </motion.div>
   );
 }
 
 function TeamPodsContent() {
   return (
-    <div className="mt-10 grid gap-8 lg:grid-cols-3">
+    <motion.div variants={staggerContainer} className="mt-10 grid gap-8 lg:grid-cols-3">
       {teamPodCards.map((card) => (
-        <article
+        <motion.article
           key={card.title}
+          variants={fadeUp}
+          whileHover={cardHover.whileHover}
+          transition={cardHover.transition}
           className={`relative flex min-h-[440px] flex-col rounded-xl border bg-white p-8 shadow-[0_8px_24px_rgba(15,23,42,0.05)] ${
             card.featured ? "border-blue-400 ring-1 ring-blue-300" : "border-slate-200"
           }`}
@@ -180,9 +187,9 @@ function TeamPodsContent() {
           >
             {card.button}
           </button>
-        </article>
+        </motion.article>
       ))}
-    </div>
+    </motion.div>
   );
 }
 
@@ -196,26 +203,26 @@ export function PricingSection() {
   };
 
   return (
-    <section id="pricing" className="scroll-mt-24 bg-[#f5f6f8]">
+    <motion.section id="pricing" className="scroll-mt-24 bg-[#f5f6f8]" initial="hidden" animate="visible" variants={staggerContainer}>
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
-        <div className="mx-auto max-w-4xl text-center">
+        <motion.div variants={fadeUp} className="mx-auto max-w-4xl text-center">
           <p className="font-mono text-[11px] font-bold uppercase tracking-[0.34em] text-[#0052FF]">Simple, All-Inclusive Plans</p>
           <h2 className="mt-5 font-display text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-4xl">
             Pricing that scales with your growth
           </h2>
           <ComplianceCard />
           <PricingTabs activeTab={activeTab} onTabChange={setActiveTab} />
-        </div>
+        </motion.div>
 
-        {activeContent[activeTab]}
+        <motion.div variants={fadeUp}>{activeContent[activeTab]}</motion.div>
 
-        <div className="mx-auto mt-6 flex max-w-3xl items-start justify-center gap-3 rounded-xl border border-slate-200 bg-white/70 px-5 py-4 text-center text-sm leading-6 text-slate-700 shadow-sm sm:items-center">
+        <motion.div variants={fadeUp} className="mx-auto mt-6 flex max-w-3xl items-start justify-center gap-3 rounded-xl border border-slate-200 bg-white/70 px-5 py-4 text-center text-sm leading-6 text-slate-700 shadow-sm sm:items-center">
           <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600 sm:mt-0" />
           <p>
             <span className="font-bold text-slate-950">All plans include:</span> Professional Delivery PM oversight, full US hours match, worry-free 2-week trial at 50%, and cancel-anytime monthly rollouts.
           </p>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

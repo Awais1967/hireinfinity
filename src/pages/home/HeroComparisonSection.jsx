@@ -1,6 +1,8 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Check, CheckCircle2, X } from "lucide-react";
 import { comparisonCards, heroComparisonStats } from "../../constants/mockData";
+import { fadeUp, staggerContainer, cardHover } from "../../common/ui/animationVariants";
 
 const stylesByTone = {
   negative: {
@@ -67,7 +69,12 @@ function ComparisonCard({ card }) {
   const BulletIcon = styles.BulletIcon;
 
   return (
-    <article className={`flex min-h-[440px] flex-col rounded-2xl border p-7 shadow-sm sm:p-8 lg:p-10 ${styles.card}`}>
+    <motion.article
+      variants={fadeUp}
+      whileHover={cardHover.whileHover}
+      transition={cardHover.transition}
+      className={`flex min-h-[440px] flex-col rounded-2xl border p-7 shadow-sm sm:p-8 lg:p-10 ${styles.card}`}
+    >
       <div className="flex items-center gap-4 mb-0">
         <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border ${styles.iconBox}`}>
           <HeaderIcon className="h-6 w-6" />
@@ -92,29 +99,29 @@ function ComparisonCard({ card }) {
       <div className={`mt-8 border-t pt-6 ${styles.divider}`}>
         <p className={`font-mono text-[11px] font-bold uppercase tracking-wider ${styles.result}`}>{card.result}</p>
       </div>
-    </article>
+    </motion.article>
   );
 }
 
 export function HeroComparisonSection() {
   return (
-    <section className="bg-[#f5f6f8]">
+    <motion.section initial="hidden" animate="visible" variants={staggerContainer} className="bg-[#f5f6f8]">
       <StatStrip />
 
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24 mb-0">
-        <div className="mx-auto max-w-3xl text-center">
+        <motion.div variants={fadeUp} className="mx-auto max-w-3xl text-center">
           <p className="font-mono text-[11px] font-bold uppercase tracking-[0.34em] text-[#0052FF]">HIRING REIMAGINED</p>
           <h2 className="mt-5 font-display text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-4xl">
             Why companies are shifting away from traditional pipelines
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="mx-auto mt-16 grid max-w-6xl gap-7 lg:grid-cols-2 lg:gap-8 mb-0">
+        <motion.div variants={staggerContainer} className="mx-auto mt-16 grid max-w-6xl gap-7 lg:grid-cols-2 lg:gap-8 mb-0">
           {comparisonCards.map((card) => (
             <ComparisonCard key={card.title} card={card} />
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

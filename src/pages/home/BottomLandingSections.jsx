@@ -1,30 +1,35 @@
-import React from "react"; import { useState } from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { LinkButton } from "../../common/ui/LinkButton";
 import { landingFaqs, technologyChips } from "../../constants/mockData";
+import { fadeUp, staggerContainer } from "../../common/ui/animationVariants";
 
 function TechnologyChips() {
   return (
-    <section className="bg-[#f5f6f8]">
+    <motion.section className="bg-[#f5f6f8]" initial="hidden" animate="visible" variants={staggerContainer}>
       <div className="mx-auto max-w-5xl px-4 pb-14 pt-8 text-center sm:px-6 sm:pb-16 sm:pt-12 lg:px-8">
-        <p className="font-mono text-[11px] font-bold uppercase tracking-[0.34em] text-[#0052FF]">EXPERIENCED TECHNOLOGIES</p>
-        <h2 className="mx-auto mt-5 max-w-3xl font-display text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-4xl">
-          We staff 15+ complex modern frameworks & design files
-        </h2>
+        <motion.div variants={fadeUp}>
+          <p className="font-mono text-[11px] font-bold uppercase tracking-[0.34em] text-[#0052FF]">EXPERIENCED TECHNOLOGIES</p>
+          <h2 className="mx-auto mt-5 max-w-3xl font-display text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-4xl">
+            We staff 15+ complex modern frameworks & design files
+          </h2>
+        </motion.div>
 
-        <div className="mx-auto mt-12 flex max-w-4xl flex-wrap justify-center gap-3">
+        <motion.div variants={staggerContainer} className="mx-auto mt-12 flex max-w-4xl flex-wrap justify-center gap-3">
           {technologyChips.map((chip) => (
-            <span
+            <motion.span
               key={chip}
+              variants={fadeUp}
               className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white/80 px-4 py-2.5 font-mono text-xs font-bold text-slate-700 shadow-sm"
             >
               <span className="h-2 w-2 rounded-full bg-[#0052FF]" />
               {chip}
-            </span>
+            </motion.span>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
@@ -32,21 +37,21 @@ function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="scroll-mt-24 bg-[#f5f6f8]">
+    <motion.section id="faq" className="scroll-mt-24 bg-[#f5f6f8]" initial="hidden" animate="visible" variants={staggerContainer}>
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="text-center">
+        <motion.div variants={fadeUp} className="text-center">
           <p className="font-mono text-[11px] font-bold uppercase tracking-[0.34em] text-[#0052FF]">COMMON INQUIRIES</p>
           <h2 className="mt-5 font-display text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-4xl">
             Frequently Asked Questions
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="mx-auto mt-16 max-w-4xl">
+        <motion.div variants={staggerContainer} className="mx-auto mt-16 max-w-4xl">
           {landingFaqs.map((faq, index) => {
             const isOpen = openIndex === index;
 
             return (
-              <div key={faq.question} className="border-b border-slate-200 py-6">
+              <motion.div key={faq.question} variants={fadeUp} className="border-b border-slate-200 py-6">
                 <button
                   type="button"
                   className="flex w-full items-center justify-between gap-5 text-left"
@@ -63,20 +68,20 @@ function FaqAccordion() {
                     <p className="max-w-3xl pt-5 text-sm leading-7 text-slate-600 sm:text-base">{faq.answer}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
 function FinalCta() {
   return (
-    <section className="border-b border-slate-200 bg-[#f5f6f8]">
+    <motion.section className="border-b border-slate-200 bg-[#f5f6f8]" initial="hidden" animate="visible" variants={fadeUp}>
       <div className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 sm:pb-20 lg:px-8">
-        <div className="mx-auto max-w-6xl rounded-3xl bg-slate-950 px-6 py-16 text-center shadow-[0_18px_40px_rgba(15,23,42,0.18)] sm:px-10 sm:py-20">
+        <motion.div className="mx-auto max-w-6xl rounded-3xl bg-slate-950 px-6 py-16 text-center shadow-[0_18px_40px_rgba(15,23,42,0.18)] sm:px-10 sm:py-20" variants={fadeUp}>
           <h2 className="font-display text-4xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">
             Start shipping in 5 days.
           </h2>
@@ -91,9 +96,9 @@ function FinalCta() {
             <ArrowRight className="h-4 w-4" />
           </LinkButton>
           <p className="mt-8 font-mono text-xs font-bold text-slate-500">Zero commitments. No setup fees. 2-week risk-free trial.</p>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
