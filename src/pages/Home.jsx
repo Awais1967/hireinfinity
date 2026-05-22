@@ -57,10 +57,10 @@ export function Home() {
             <Sparkles className="h-3.5 w-3.5" />
             US Registered firm · SOC2 compliance ready
           </span>
-          <h1 className="mt-7 max-w-4xl font-display text-5xl font-black leading-[0.98] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
-            <span className="block">Senior engineers.</span>
-            <span className="block text-[#0052FF]">Ready in 5 days.</span>
-            <span className="block">70% less than a US hire.</span>
+          <h1 className="mt-7 max-w-4xl font-display text-5xl font-black leading-[0.98] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+            <span className="block mb-3">Senior engineers.</span>
+            <span className="block text-[#0052FF] mb-1">Ready in 5 days.</span>
+            <span className="block mb-1">70% less than a US hire.</span>
           </h1>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-700 sm:text-xl">
             Stop waiting 90 days or paying $20k recruiter markups. Access vetted senior developers who work 100% in your US hours. Start risk-free with a 2-week trial.

@@ -8,7 +8,7 @@ function TechnologyChips() {
     <section className="bg-[#f5f6f8]">
       <div className="mx-auto max-w-5xl px-4 pb-14 pt-8 text-center sm:px-6 sm:pb-16 sm:pt-12 lg:px-8">
         <p className="font-mono text-[11px] font-bold uppercase tracking-[0.34em] text-[#0052FF]">EXPERIENCED TECHNOLOGIES</p>
-        <h2 className="mx-auto mt-5 max-w-3xl font-display text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">
+        <h2 className="mx-auto mt-5 max-w-3xl font-display text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-4xl">
           We staff 15+ complex modern frameworks & design files
         </h2>
 
@@ -36,7 +36,7 @@ function FaqAccordion() {
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="text-center">
           <p className="font-mono text-[11px] font-bold uppercase tracking-[0.34em] text-[#0052FF]">COMMON INQUIRIES</p>
-          <h2 className="mt-5 font-display text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">
+          <h2 className="mt-5 font-display text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-4xl">
             Frequently Asked Questions
           </h2>
         </div>
@@ -77,7 +77,7 @@ function FinalCta() {
     <section className="border-b border-slate-200 bg-[#f5f6f8]">
       <div className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 sm:pb-20 lg:px-8">
         <div className="mx-auto max-w-6xl rounded-3xl bg-slate-950 px-6 py-16 text-center shadow-[0_18px_40px_rgba(15,23,42,0.18)] sm:px-10 sm:py-20">
-          <h2 className="font-display text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h2 className="font-display text-4xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">
             Start shipping in 5 days.
           </h2>
           <p className="mx-auto mt-7 max-w-2xl text-base font-semibold leading-7 text-slate-400 sm:text-lg">

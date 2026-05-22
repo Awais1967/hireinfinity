@@ -89,7 +89,7 @@ function ComparisonCard({ card }) {
         ))}
       </div>
 
-      <div className={`mt-auto border-t pt-6 ${styles.divider}`}>
+      <div className={`mt-8 border-t pt-6 ${styles.divider}`}>
         <p className={`font-mono text-[11px] font-bold uppercase tracking-wider ${styles.result}`}>{card.result}</p>
       </div>
     </article>
@@ -104,7 +104,7 @@ export function HeroComparisonSection() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24 mb-0">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-mono text-[11px] font-bold uppercase tracking-[0.34em] text-[#0052FF]">HIRING REIMAGINED</p>
-          <h2 className="mt-5 font-display text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">
+          <h2 className="mt-5 font-display text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-4xl">
             Why companies are shifting away from traditional pipelines
           </h2>
         </div>
